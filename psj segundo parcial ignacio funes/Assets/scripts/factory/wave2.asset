@@ -18,3 +18,4 @@ MonoBehaviour:
   - {x: -3, y: 4, z: 0}
   - {x: 0, y: 0, z: 0}
   Factory: {fileID: 3446405731462371757, guid: 258eeb994008c7e4098a8aaa486e5f18, type: 3}
+  pool: {fileID: 8455273728329718207, guid: 402a49c952069784f902f9e25b78fa2c, type: 3}

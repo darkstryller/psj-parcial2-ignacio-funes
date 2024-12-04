@@ -148,6 +148,8 @@ MonoBehaviour:
   body: {fileID: 5269593701073041693}
   currentlife: 0
   moveContainer: {fileID: 6223064650991712835}
+  type: 1
+  controller: {fileID: 7945513881434675364}
 --- !u!114 &6223064650991712835
 MonoBehaviour:
   m_ObjectHideFlags: 0

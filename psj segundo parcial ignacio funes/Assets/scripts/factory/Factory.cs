@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Factory : MonoBehaviour
+public class Factory : MonoBehaviour, IFactoryService
 {
     public GameObject ZombiePrefab;   
     public GameObject SkeletonPrefab; 
-    public EnemySettings Zombie; //factory returns
-    public EnemySettings Skeleton;
-
+    public EnemySettings ZombieSettings; //factory returns
+    public EnemySettings SkeletonSettings;
+    
+    void Awake()
+    {
+        
+    }
+    
     public GameObject CreateEnemy(EnemyType type, Vector3 spawnPosition)
     {
         GameObject prefabToSpawn = GetPrefab(type);
@@ -43,15 +48,17 @@ public class Factory : MonoBehaviour
         switch (type)
         {
             case EnemyType.Zombie:
-                model.Settings = Zombie;
+                model.Settings = ZombieSettings;
                 break;
             case EnemyType.Skeleton:
-                model.Settings = Skeleton;
+                model.Settings = SkeletonSettings;
                 break;
         }
 
-        
+        pool.poolDictionary[type].Enqueue(controller);
     }
 
    
+    
+
 }

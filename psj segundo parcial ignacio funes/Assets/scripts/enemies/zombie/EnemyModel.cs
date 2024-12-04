@@ -9,6 +9,8 @@ public class EnemyModel : MonoBehaviour, IDamageable
     [SerializeField] Rigidbody2D body;
     [SerializeField] int currentlife;
     [SerializeField] MoveContainer moveContainer;
+    [SerializeField] EnemyType type;
+    [SerializeField] EnemyController controller;
 
     void Awake()
     {
@@ -16,7 +18,8 @@ public class EnemyModel : MonoBehaviour, IDamageable
     }
     public void die()
     {
-        Destroy(this.gameObject);
+        pool.EnqueObject(controller, type);
+
     }
     public Vector2 SetDir(Transform target)
     {
@@ -35,7 +38,7 @@ public class EnemyModel : MonoBehaviour, IDamageable
         currentlife = Settings.MaxLife;
     }
 
-
+    
     public Rigidbody2D Body => body;
     public MoveContainer Move => moveContainer;
     public bool IsAlive => currentlife <= 0;

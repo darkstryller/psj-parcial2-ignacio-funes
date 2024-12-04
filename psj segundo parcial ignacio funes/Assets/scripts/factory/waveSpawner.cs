@@ -6,11 +6,12 @@ public class waveSpawner : MonoBehaviour
 {
     public Wave[] waves;
     public bool stopper;
+
     
     // Start is called before the first frame update
     void Start()
     {
-       
+        stopper = true;
         
     }
 
@@ -29,8 +30,8 @@ public class waveSpawner : MonoBehaviour
         for (int i = 0; i < waves.Length; i++)
         {
                 stopper = false;
-            waves[i].SpawnWave();
-            Cooldown(60);
+                waves[i].SpawnWave();
+                Cooldown(600);
 
         }
 

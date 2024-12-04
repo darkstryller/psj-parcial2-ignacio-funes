@@ -14,15 +14,20 @@ public class EnemyController : MonoBehaviour
     ITreeNode root;
     private void Awake()
     {
-        target = targetprefab.transform;
-        initializeFSM();
-        initializeTree();
+        initialize();
     }
     // Update is called once per frame
     void Update()
     {
         fsm.OnUpdate();
         root.Execute();
+    }
+    public void initialize()
+    {
+        target = targetprefab.transform;
+        model.SetLife();
+        initializeFSM();
+        initializeTree();
     }
     void initializeFSM()
     {
