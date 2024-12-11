@@ -25,7 +25,6 @@ public class EnemyController : MonoBehaviour
     public void initialize()
     {
         target = targetprefab.transform;
-        model.SetLife();
         initializeFSM();
         initializeTree();
     }

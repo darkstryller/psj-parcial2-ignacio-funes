@@ -6,6 +6,6 @@ public interface IDamageable
 {
     void GetDamage( int damage);
 
-    void SetLife();
+    void SetLife(int maxlife);
 
 }

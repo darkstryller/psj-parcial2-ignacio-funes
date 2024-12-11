@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 1572357668871419048}
   - component: {fileID: 2137017094043614984}
   - component: {fileID: 371837513409243206}
+  - component: {fileID: 4467690392805478801}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -235,9 +236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 5c702ac9873175f49bfe091ce3e74997, type: 2}
   rb: {fileID: 4356231460206197456}
-  currentlife: 1
   attack: 32
   hitbox: {fileID: 5203278934940394734}
+  IamGod: 0
 --- !u!114 &2137017094043614984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,3 +296,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4467690392805478801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973445774922984357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883ae0bf633076946a8e1552be358876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyHealth: 20
