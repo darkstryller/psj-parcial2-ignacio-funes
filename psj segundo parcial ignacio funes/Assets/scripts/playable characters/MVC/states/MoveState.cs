@@ -26,6 +26,6 @@ public class MoveState<T> : State<T>
 
     public override void Exit()
     {
-        dir = Vector2.zero;
+        move.move(new Vector2(0, 0), 0, body);
     }
 }

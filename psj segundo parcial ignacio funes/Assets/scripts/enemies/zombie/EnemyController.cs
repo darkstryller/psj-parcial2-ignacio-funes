@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] EnemyModel model;
-    [SerializeField] Transform target;
     [SerializeField] GameObject targetprefab;
     [SerializeField] bool debugboolmove;
 
@@ -21,10 +20,10 @@ public class EnemyController : MonoBehaviour
     {
         fsm.OnUpdate();
         root.Execute();
+        
     }
     public void initialize()
     {
-        target = targetprefab.transform;
         initializeFSM();
         initializeTree();
     }
@@ -33,7 +32,7 @@ public class EnemyController : MonoBehaviour
         fsm = new FSM<EnemyStateEnum>();
 
         var idle = new EnemyIdleState<EnemyStateEnum>();
-        var move = new EnemyMovestate<EnemyStateEnum>(model.Move, model, target);
+        var move = new EnemyMovestate<EnemyStateEnum>(model.Move, model, targetprefab);
         var dead = new EnemyDeadState<EnemyStateEnum>(model);
 
         idle.AddTransition(EnemyStateEnum.move, move);
@@ -67,4 +66,6 @@ public class EnemyController : MonoBehaviour
     {
         return model.IsAlive;
     }
+
+    public EnemyModel Model => model;
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,13 @@ public class waveSpawner : MonoBehaviour
 {
     public Wave[] waves;
     public bool stopper;
-
+    [SerializeField] float interval = 3;
+    
     
     // Start is called before the first frame update
     void Start()
     {
+         
         stopper = true;
         
     }
@@ -27,18 +30,23 @@ public class waveSpawner : MonoBehaviour
     {
         
         if (stopper)
-        for (int i = 0; i < waves.Length; i++)
         {
-                stopper = false;
-                waves[i].SpawnWave();
-                Cooldown(600);
-
+            stopper = false;
+            StartCoroutine(Spawner(interval));
         }
+       
 
     }
-    IEnumerator Cooldown(float time)
+    IEnumerator Spawner(float time)
     {
-        yield return new WaitForSeconds(time);
+        for (int i = 0; i < waves.Length; i++)
+        {
+
+            waves[i].SpawnWave();
+            yield return new WaitForSeconds(time);
+
+        }
+        
         
     }
 }

@@ -8,20 +8,18 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] KeyCode attack;
     [SerializeField] GameObject hitbox;
-    public bool IamGod = false;
 
     MoveContainer move;
     HealthContainer health;
     private void Awake()
     {
-        IamGod = false;
         move = GetComponent<MoveContainer>();
         health = GetComponent<HealthContainer>();
         health.SetLife(player.MaxLife);
     }
     private void Update()
     {
-        if (Input.GetKey(attack) || IamGod)
+        if (Input.GetKey(attack))
         {
             hitbox.SetActive(true);
         }

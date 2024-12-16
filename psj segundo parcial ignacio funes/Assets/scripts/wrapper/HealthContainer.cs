@@ -7,8 +7,10 @@ public class HealthContainer : MonoBehaviour, IDamageable
 {
     [SerializeField] IDamageable impl;
     public int MyHealth;
+    public bool IsInvicible = false;
     public virtual void GetDamage(int damage)
     {
+        if(IsInvicible == false)
         MyHealth -= damage;
     }
 
@@ -18,15 +20,4 @@ public class HealthContainer : MonoBehaviour, IDamageable
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

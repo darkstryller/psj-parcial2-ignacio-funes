@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: spawn wave 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3372,7 +3372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43b115245e8d4e40ad5c5ce3390413f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  command: {fileID: 11400000, guid: 65556c5ae6d047e469dd5a2c5ae44f64, type: 2}
+  command: {fileID: 11400000, guid: d3a3a96f74f3ec64687db0b7002b0bdc, type: 2}
   arguments: 
 --- !u!114 &2028474542
 MonoBehaviour:
@@ -3514,6 +3514,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1354639823676937348, guid: 99fb231f961ddca4099d727704c403b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467690392805478801, guid: 99fb231f961ddca4099d727704c403b3, type: 3}
+      propertyPath: IsInvicible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5203278934940394734, guid: 99fb231f961ddca4099d727704c403b3, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5973445774922984357, guid: 99fb231f961ddca4099d727704c403b3, type: 3}

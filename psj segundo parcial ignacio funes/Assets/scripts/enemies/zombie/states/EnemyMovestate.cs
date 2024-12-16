@@ -7,9 +7,9 @@ public class EnemyMovestate<T> : State<T>
     MoveContainer move;
     EnemyModel model;
     Vector2 dir;
-    Transform target;
+    GameObject target;
 
-    public EnemyMovestate(MoveContainer move, EnemyModel model, Transform target)
+    public EnemyMovestate(MoveContainer move, EnemyModel model, GameObject target)
     {
         this.move = move;
         this.model = model;
@@ -19,9 +19,9 @@ public class EnemyMovestate<T> : State<T>
     public override void Execute()
     {
         base.Execute();
-         dir = model.SetDir(target);
-
-        move.move(dir, model.Settings.Speed, model.Body);
+         dir = model.SetDir(target.transform);
+         
+        move.move(dir.normalized, model.Settings.Speed, model.Body);
     }
     public override void Enter()
     {

@@ -7,7 +7,6 @@ public class Wave : ScriptableObject
 {
     public EnemyType[] Enemies;
     public Vector3[] Positions;
-
     
 
     public void SpawnWave()
@@ -20,7 +19,7 @@ public class Wave : ScriptableObject
             for (int i = 0; i < Enemies.Length; i++)
             {
                 controller = pool.callDeque(Enemies[i], Positions[i]);
-                Debug.Log(controller + "is on pool");
+                
                 if(controller == null)
                  enemy = factory.CreateEnemy(Enemies[i], Positions[i]);
             }

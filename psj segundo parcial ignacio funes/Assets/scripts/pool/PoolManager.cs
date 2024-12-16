@@ -21,6 +21,7 @@ public class PoolManager : MonoBehaviour, IPoolService
             return null;
         instance.gameObject.SetActive(true);
         instance.transform.position = position;
+        instance.Model.Health.SetLife(instance.Model.Settings.MaxLife);
         instance.initialize();
 
         return instance;

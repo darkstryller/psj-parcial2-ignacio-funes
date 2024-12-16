@@ -7,7 +7,6 @@ public class EnemyModel : MonoBehaviour
 {
     public EnemySettings Settings;
     [SerializeField] Rigidbody2D body;
-    [SerializeField] int currentlife;
     [SerializeField] MoveContainer moveContainer;
     [SerializeField] EnemyType type;
     [SerializeField] EnemyController controller;
@@ -16,6 +15,7 @@ public class EnemyModel : MonoBehaviour
 
     void Awake()
     {
+        health = GetComponent<HealthContainer>();
         health.SetLife(Settings.MaxLife);
     }
     public void die()
@@ -32,5 +32,6 @@ public class EnemyModel : MonoBehaviour
 
     public Rigidbody2D Body => body;
     public MoveContainer Move => moveContainer;
-    public bool IsAlive => currentlife <= 0;
+    public bool IsAlive => health.MyHealth <= 0;
+    public HealthContainer Health => health;
 }

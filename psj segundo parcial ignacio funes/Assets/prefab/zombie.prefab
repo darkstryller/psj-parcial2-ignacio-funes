@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 816241964412039147}
-  target: {fileID: 0}
+  target: {fileID: 1354639823676937348, guid: 99fb231f961ddca4099d727704c403b3, type: 3}
   targetprefab: {fileID: 5973445774922984357, guid: 99fb231f961ddca4099d727704c403b3, type: 3}
   debugboolmove: 1
 --- !u!114 &816241964412039147
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Settings: {fileID: 11400000, guid: c93486095372dfc409cfe676b100eb75, type: 2}
   body: {fileID: 6945971465345657277}
-  currentlife: 0
   moveContainer: {fileID: 4431428135218718668}
   type: 0
   controller: {fileID: 5774691282746025733}
@@ -221,3 +220,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyHealth: 15
+  IsInvicible: 0
