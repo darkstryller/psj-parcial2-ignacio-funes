@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//pool manager es una clase con accesso al pool, no es el pool
 public class PoolManager : MonoBehaviour, IPoolService
 {
     public EnemyController ZombieController;
@@ -11,9 +11,10 @@ public class PoolManager : MonoBehaviour, IPoolService
 
     private void Awake()
     {
-        pool.SetupPool(ZombieController, 5, zombie);
-        pool.SetupPool(SkeletonController, 3, skeleton);
+        pool.SetupPool(ZombieController, 2, zombie);
+        pool.SetupPool(SkeletonController, 1, skeleton);
     }
+    //funcion para obtener el pool
     public EnemyController callDeque(EnemyType type, Vector3 position)
     {
         EnemyController instance = pool.DequeObject<EnemyController>(type);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="Commands/spawnwave")]
+//comando para spawnear oleadas de forma especifica
 public class SpawnWavesByCommand : Command
 {
     [SerializeField] Wave wave;

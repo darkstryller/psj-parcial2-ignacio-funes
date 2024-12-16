@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject targetprefab;
     [SerializeField] bool debugboolmove;
 
+    // el fsm del enemigo junto a el desicion tree para el comportamiento
     FSM<EnemyStateEnum> fsm;
     ITreeNode root;
     private void Awake()
@@ -20,7 +21,6 @@ public class EnemyController : MonoBehaviour
     {
         fsm.OnUpdate();
         root.Execute();
-        
     }
     public void initialize()
     {

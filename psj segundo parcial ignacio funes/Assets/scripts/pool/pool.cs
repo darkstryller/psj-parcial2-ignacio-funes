@@ -4,8 +4,9 @@ using UnityEngine;
 
 public static class pool 
 {
-    //diccionario con key hashset para poolear todos los objetos
-    //public static Dictionary<EnemyType, Queue<Component>> poolLookUp = new Dictionary<EnemyType, Queue<Component>>();
+    //diccionario con key enum para poolear todos los objetos
+    //se intento usar hashset, pero no funciono, asi que volvi con enums
+    //este pool no tiene look up table como en su version original, ya que esta se utilizaba para crear instancias de objetos, el trabajo de factory.
     public static Dictionary<EnemyType, Queue<Component>> poolDictionary = new Dictionary<EnemyType, Queue<Component>>();
 
     public static void EnqueObject<T>(T item, EnemyType enemy) where T : Component

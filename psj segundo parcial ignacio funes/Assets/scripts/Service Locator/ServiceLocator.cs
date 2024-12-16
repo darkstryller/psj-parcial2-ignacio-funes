@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 
 public class ServiceLocator
 {
+    // instance se asegura de que la instancia sea unica
     public static ServiceLocator Instance => instance ?? (instance = new ServiceLocator());
     private static ServiceLocator instance;
 

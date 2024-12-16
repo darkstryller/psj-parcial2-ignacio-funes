@@ -21,6 +21,7 @@ public class MoveState<T> : State<T>
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         dir = new Vector2(x, y);
+        dir *= 100;
         move.move(dir, speed, body);
     }
 

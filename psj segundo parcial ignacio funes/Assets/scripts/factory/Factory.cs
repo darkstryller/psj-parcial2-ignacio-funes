@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Factory : MonoBehaviour, IFactoryService
 {
+    //se agrega desde editor los parametros de las keys y de los objetos
     public GameObject ZombiePrefab;   
     public GameObject SkeletonPrefab; 
-    public EnemySettings ZombieSettings; //factory returns
+    public EnemySettings ZombieSettings; 
     public EnemySettings SkeletonSettings;
     
     void Awake()
@@ -26,6 +27,7 @@ public class Factory : MonoBehaviour, IFactoryService
 
     GameObject GetPrefab(EnemyType type)
     {
+        //me gusta el switch
         switch (type)
         {
             case EnemyType.Zombie:
@@ -43,8 +45,9 @@ public class Factory : MonoBehaviour, IFactoryService
         EnemyController controller = enemy.GetComponent<EnemyController>();
         EnemyModel model = enemy.GetComponent<EnemyModel>();
         MoveContainer moveContainer = enemy.GetComponent<MoveContainer>();
+        HealthContainer healthContainer = enemy.GetComponent<HealthContainer>();
 
-        // Apply settings based on type
+        // se asegura de agregar el scriptable
         switch (type)
         {
             case EnemyType.Zombie:

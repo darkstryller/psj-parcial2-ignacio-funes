@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveContainer : MonoBehaviour, IMove
 {
+    //implementacion de decorator
     public void move(Vector2 dir, float speed, Rigidbody2D body)
     {
         body.velocity += dir * speed * Time.deltaTime;

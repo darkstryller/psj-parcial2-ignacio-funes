@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Commands/godmode")]
+//comando para generar invencibilidad
 public class SetGodMode : Command
 {
     [SerializeField] HealthContainer subject;
